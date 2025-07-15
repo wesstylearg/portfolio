@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WESSTYLE – Biblioteca</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="img/icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Botón hamburguesa para móvil -->
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+  <div class="app-container">
+  <!-- Sidebar estilo Spotify -->
+    <aside class="sidebar">
+      <nav class="menu">
+        <ul>
+  <li><a href="index.html"><img src="img/inicio.svg" alt="Inicio"> Inicio</a></li>
+  <li><a href="portfolio.html"><img src="img/biblioteca.png" alt="Biblioteca"> Biblioteca</a></li>
+<li><a href="index.html#sobre-mi"><img src="img/sobremi.png" alt="Sobre mí"> Sobre mí</a></li>
+
+  <li><a href="index.html#contacto"><img src="img/contacto.png" alt="Contacto"> Contacto</a></li>
+</ul>
+      </nav>
+    </aside>
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <header class="header" id="inicio">
+        <div class="logo">
+          <img src="img/wesstar.png" alt="Logo WESSTYLE" />
+        </div>
+        <h2>WESSTYLE</h2>
+      </header>
+ <section class="portafolio" id="portafolio">
+        <h3>Trabajos Realizados</h3>
+        <div class="album-grid">
+              <!-- Álbum 1 -->
+    <div class="album">
+  <img src="img/cover1.jpg" alt="Diseño 1" class="album-img" />
+  <h4>En Mi Mente <3</h4>
+  <a href="https://open.spotify.com/intl-es/track/3x9FFVDEmXHarrLdn06yNJ?si=36c2c4e762654472" target="_blank">Siroe</a>
+</div>
+
+    <!-- Álbum 2 -->
+    <div class="album">
+      <img src="img/cover2.jpeg" alt="Diseño 2" class="album-img" />
+      <h4>Vuelvo a caer</h4>
+      <a href="https://open.spotify.com/intl-es/track/70Y7oaZK2Xh1XXBZh0caeN?si=5d371f86abeb47f7" target="_blank">NIRO</a>
+    </div>
+
+    <!-- Álbum 3 -->
+    <div class="album">
+      <img src="img/cover3.png" alt="Diseño 3" class="album-img" />
+      <h4>AW</h4>
+      <a href="" target="_blank">ONCE</a>
+    </div>
+		  
+		<!-- Álbum 4 -->
+          <div class="album">
+            <img src="img/cover4.png" alt="Diseño 4" class="album-img" />
+            <h4>Sincero</h4>
+            <a href="https://open.spotify.com/intl-es/track/3aK14UjWrMTjZCZjhK872Z?si=9ef885cc48b648d8" target="_blank">BARI</a>
+          </div>
+		<!-- Álbum 5 -->
+          <div class="album">
+            <img src="img/cover5.png" alt="Diseño 4" class="album-img" />
+            <h4>EASY</h4>
+            <a href="https://open.spotify.com" target="_blank">bigdelitto</a>
+          </div>
+		  <!-- Álbum 6-->
+          <div class="album">
+            <img src="img/cover6.jpg" alt="Diseño 3" class="album-img" />
+            <h4>EIGHT</h4>
+            <a href="https://open.spotify.com" target="_blank">W7</a>
+          </div>
+	  
+	  <div class="album">
+            <img src="img/cover7.jpeg" alt="Diseño 3" class="album-img" />
+            <h4>Campera de adidas</h4>
+            <a href="https://open.spotify.com" target="_blank">JvnRomann</a>
+          </div>
+    </div>
+		  
+		 
+      </section>
+
+  <script src="js/lightbox.js"></script>
+  <script>
+    function toggleSidebar() {
+      document.querySelector('.sidebar').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
