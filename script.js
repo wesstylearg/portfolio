@@ -512,16 +512,7 @@ window.addEventListener(
   { passive: true }
 );
 
-const stageEl = document.getElementById("stage");
-stageEl.addEventListener("touchstart", (e) => {
-  touchStartY = e.touches[0].clientY;
-});
-stageEl.addEventListener("touchend", (e) => {
-  if (touchStartY === null) return;
-  const dy = touchStartY - e.changedTouches[0].clientY;
-  if (Math.abs(dy) > 60) step(dy > 0 ? 1 : -1);
-  touchStartY = null;
-});
+
 
 window.addEventListener("resize", renderRail);
 
