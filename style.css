@@ -23,8 +23,8 @@ html, body{ margin:0; padding:0; background:var(--void); }
 }
 
 @font-face {
-  font-family: "otra";
-  src: url("fonts/bootzy.woff2") format("woff2");
+  font-family: "monument";
+  src: url("fonts/monument.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
 }
@@ -64,7 +64,7 @@ html, body{ margin:0; padding:0; background:var(--void); }
 
 .corner{
   position:absolute; z-index:5;
-  font-family:'bootzy', sans-serif;
+  font-family:'monument', sans-serif;
   font-weight:400;
   text-transform:lowercase;
   font-size:25px;
@@ -191,15 +191,30 @@ html, body{ margin:0; padding:0; background:var(--void); }
   font-size: clamp(16px, 2.2vw, 20px);
 }
 .press-start{
-  display:inline-flex; align-items:center; gap:10px;
-  font-family:'bootzy', sans-serif; font-weight:400;
-  font-size:16px; letter-spacing:1px; text-transform:uppercase;
-  background:var(--chrome); color:var(--void);
-  border:none; border-radius:6px; padding:14px 28px;
-  cursor:pointer; transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1), background .2s ease;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px auto 5px auto;
+  background-color: var(--surface); /* Usa tu color violeta definido en variables (#4632a8) */
+  color: var(--chrome);
+  font-family: 'monument', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.press-start:hover{ background:var(--surface); color:var(--chrome); transform: translateY(-2px); }
+.press-start:hover{
+  background-color: var(--chrome);
+  color: var(--void);
+  border-color: var(--chrome);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(70, 50, 168, 0.6);
+}
 
 .home-title-container {
   display: flex;
@@ -255,8 +270,10 @@ html, body{ margin:0; padding:0; background:var(--void); }
 }
 
 .section-title{ 
-  font-family: 'bootzy', sans-serif; 
-  font-size: clamp(36px, 5.5vw, 56px); 
+  font-family: 'monument', sans-serif; 
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(26px, 5.5vw, 36px); 
   margin: 0; 
   color: var(--accent); 
   letter-spacing: 0.5px; 
@@ -547,7 +564,7 @@ html, body{ margin:0; padding:0; background:var(--void); }
 }
 
 .contact-card h3 {
-  font-family: 'bootzy', sans-serif;
+  font-family: 'monument', sans-serif;
   font-size: 28px;
   color: var(--chrome);
   margin: 0;
@@ -555,10 +572,9 @@ html, body{ margin:0; padding:0; background:var(--void); }
 }
 
 .contact-card p {
-  font-family: 'Inter', sans-serif;
+  font-family: 'bootzy', sans-serif;
   color: var(--muted);
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 20px;
   margin: 0 0 10px 0;
 }
 
@@ -615,43 +631,42 @@ html, body{ margin:0; padding:0; background:var(--void); }
 }
 /* ---------- BOTÓN DE SIGUIENTE SECCIÓN ---------- */
 .next-section-btn {
-  display: flex;
+  margin: 30px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 15px auto 5px auto;
-  background-color: var(--surface); /* Usa tu color violeta definido en variables (#4632a8) */
+  background: rgba(24, 24, 24, 0.65);
   color: var(--chrome);
-  font-family: 'bootzy', sans-serif;
-  font-size: 15px;
-  letter-spacing: 1px;
+  font-family: 'monument', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-  padding: 10px 22px;
+  border: 1px solid rgba(70, 50, 168, 0.4);
+  border-radius: 50px; /* Lo hace completamente redondeado en los extremos tipo cápsula */
+  padding: 10px 24px;
   cursor: pointer;
+  backdrop-filter: blur(10px);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 16px rgba(70, 50, 168, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .next-section-btn svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   stroke: var(--chrome);
   transition: transform 0.25s ease;
 }
 
 .next-section-btn:hover {
-  background-color: var(--chrome);
-  color: var(--void);
+  background: var(--surface);
   border-color: var(--chrome);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(70, 50, 168, 0.6);
+  box-shadow: 0 6px 22px rgba(70, 50, 168, 0.5);
 }
 
 .next-section-btn:hover svg {
-  stroke: var(--void);
-  transform: translateY(3px); /* Pequeño movimiento sutil de la flecha hacia abajo */
+  transform: translateY(3px);
 }
 /* ---------- REELS GALLERY (9:16 Verticales) ---------- */
 .floating-item.reel-item {
@@ -826,7 +841,10 @@ html, body{ margin:0; padding:0; background:var(--void); }
     grid-column: auto;
   }
 
-  .section-title { font-size: 36px; margin: 2px 0; }
+  .section-title { 
+    font-size: 26px; 
+    margin-top: 20px; /* Ajustá este valor a los píxeles que necesites */
+  }
   .section-blurb { font-size: 14px; margin: 0; }
 
   /* Devuelve el icono a su lugar natural centrado arriba en móviles */
@@ -1218,4 +1236,9 @@ html, body{ margin:0; padding:0; background:var(--void); }
   .floating-item.reel-item {
     width: 150px;
     height: 266px; /* Más compactos en pantallas pequeñas para evitar que desborden */
+  }
+
+  .next-section-btn {
+    margin-top: -10px; /* Sube la posición del botón respecto al contenido previo */
+    margin-bottom: 30px; /* Controla el espacio con el menú inferior */
   }

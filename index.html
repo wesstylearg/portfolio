@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Portfolio — wesstyle.arg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="stage" class="stage">
+  <nav id="rail" class="rail"></nav>
+
+  <div id="viewport" class="viewport"></div>
+
+  <div id="warpOverlay" class="warp-overlay">
+    <img id="warpEmblem" class="warp-emblem" src="img/icons/logo.svg" alt="Warp Logo" width="140" height="98" />
+  </div>
+
+  <div id="pips" class="pips"></div>
+
+  <div id="modalBackdrop" class="modal-backdrop" hidden>
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+    <div class="modal-card" id="modalCard">
+      <div class="modal-placeholder"></div>
+      <div class="modal-info">
+        <h3 class="wordmark modal-title" id="modalTitle"></h3>
+        <p class="modal-cat" id="modalCat"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

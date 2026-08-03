@@ -11,50 +11,38 @@ const ICONS = {
 };
 
 const SECTIONS = [
-  { 
+ { 
     id: "portadas", 
-    label: "Portadas / Album Art", 
+    label: "Portadas / Album Cover Art", 
     number: " ", 
     icon: "image", 
     blurb: "Tapa de album o sencillo para plataformas como Spotify.", 
     portadas: [
-      { title: "una noche más", client: "niro", file: "unanochemas.png" },
-      { title: "FUGAZ", client: "Mou G", file: "fugaz.png" },
-      { title: "Soul Side", client: "Frannko", file: "soulside.png" },
-      { title: "Ciclo", client: "Gonda", file: "ciclo.png" },
-      { title: "Lejos de ti", client: "Vanek", file: "lejos-de-ti.png" },
-      { title: "Noche en Capital", client: "Xeon", file: "caribuenas.png" },
-      { title: "Future Trap", client: "EzeLyrics", file: "futuretrap.png" },
-      { title: "Remember", client: "Siroe", file: "remember.png" },
-      { title: "Te vi", client: "Gondra", file: "te-vi.png" },
-      { title: "PUCCA", client: "Niro", file: "Portada Pucca v1 final.png" },
-      { title: "Nuestro Ayer", client: "Siroe", file: "nuestroayer.png" },
-      { title: "Mi ataud", client: "Gondra", file: "mi-ataud.png" },
-      { title: "Como te pense", client: "Waru Lavv", file: "como_te_pense.png" },
-      { title: "0 Movimiento", client: "DCHINX", file: "ceromovimiento.png" },
-      { title: "Thanos", client: "Rull Royce", file: "thanos.png" },
-      { title: "El genesis", client: "Frannko", file: "genesis.png" },
-      { title: "En Mi Mente", client: "Siroe", file: "en_mi_mente.jpg" },
-      { title: "SELATROP", client: "Berti", file: "selatrop.png" },
-      { title: "4077", client: "Vazzko", file: "4077.png" },
-      { title: "Altibajos", client: "Leitoo", file: "altibajos.png" },
-      { title: "Fvck luv", client: "Duki, C.R.O (Concepto)", file: "fuck_luv.png" },
-      { title: "Vampiros", client: "Duki, C.R.O (Concepto)", file: "vampiros.png" },
-      { title: "Vuelvo a caer", client: "Niro", file: "vuelvo-a-caer.jpeg" },
-      { title: "FRONTEOTOUR", client: "NEBU", file: "fronteotour.png" },
-      { title: "TAMO NUEVO", client: "Gondra", file: "tamonuevo.png" },
-      { title: "TONY MONTANA", client: "C.R.O (Concepto)", file: "tony_montana.png" },
-      { title: "Make it happn", client: "TWK", file: "makeithapppn.png" },
-      { title: "Parcerita", client: "Chemz LP", file: "parcerita.png" },
-      { title: "Chantas", client: "Valuto, Ara, Sixto (Concepto)", file: "chantas.png" },
-      { title: "COSM1C", client: "Cosmic Kid (Concepto)", file: "cosmic.jpeg" },
-      { title: "Kid Knak", client: "Knak (Concepto)", file: "knak.png" },
-      { title: "Sincero", client: "BARI", file: "sincero.png" },
-      { title: "indiferente", client: "", file: "indiferente.png" },
-      { title: "Reversionado", client: "RodriiLA", file: "reversionado.png" },
-      { title: "DOPAMINA", client: "D CHINX", file: "dopamina.png" },
-      { title: "AW", client: "ONCE", file: "aw.png" },
-      { title: "CHINA LAKE", client: "ORBE", file: "china-lake.png" }
+      { title: "Desde donde vengo", client: "Arana", file: "(1).webp" },
+      { title: "MI VISERA", client: "JvnRoman", file: "(2).webp" },
+      { title: "El Génesis", client: "Frannko", file: "(3).webp" },
+      { title: "Una noche más", client: "Niro", file: "(4).webp" },
+      { title: "indiferente", client: " ", file: "(5).webp" },
+      { title: "MI LOCA", client: "Gondra", file: "(6).webp" },
+      { title: "PUCCA", client: "Niro", file: "(7).webp" },
+      { title: "FUGAZ", client: "Mou G", file: "(8).webp" },
+      { title: "Vampiros", client: "Concepto", file: "(9).webp" },
+      { title: "E.N.V.A.V", client: "KEVANS", file: "(10).webp" },
+      { title: "Fvck Luv", client: "Concepto", file: "(11).webp" },
+      { title: "Lejos de ti", client: "Vanek", file: "(12).webp" },
+      { title: "Mi ataúd", client: "Gondra", file: "(13).webp" },
+      { title: "Future Trap", client: "EzeLyrics", file: "(14).webp" },
+      { title: "selatrop", client: " ", file: "(15).webp" },
+      { title: "SOUL SIDE", client: "Frannko", file: "(16).webp" },
+      { title: "¿qué tal tu día?", client: "Kevans", file: "(17).webp" },
+      { title: "Remember", client: "Siroe", file: "(18).webp" },
+      { title: "Sincero", client: "BARI", file: "(19).webp" },
+      { title: "En Mi Mente <3", client: "Siroe", file: "(20).webp" },
+      { title: "CICLO", client: "Gondra", file: "(21).webp" },
+      { title: "FRONTEOTOUR", client: "Concepto", file: "(22).webp" },
+      { title: "Te vi", client: "Gondra", file: "(23).webp" },
+      { title: "Reversionado", client: "RodriiLA", file: "(24).webp" },
+      { title: "Tamo Nuevo", client: "Gondra", file: "(25).webp" }
     ]
   },
   { 
@@ -64,61 +52,57 @@ const SECTIONS = [
     icon: "flyer", 
     blurb: "Diseños publicitarios para redes sociales.", 
     flyers: [
-      { title: "Noche Mexicana", client: "Viersadingos", src: "img/flyers/frpicante.png" },
-      { title: "Te vi (Lanzamiento)", client: "Gondra", src: "img/flyers/tevi.png" },
-      { title: "Niceto FRN & KAU!", client: "FRN", src: "img/flyers/frn-niceto.png" },
-      { title: "Sorteo Niceto", client: "FRN", src: "img/flyers/frn-emerfst.png" },
-      { title: "Poster FRO!", client: "wesstyle.arg", src: "img/flyers/fro.png" },
-      { title: "La Santa Trinidad", client: "Micery", src: "img/flyers/santatrinidad.jpg" },
-      { title: "i gotta feeling", client: "wesstyle.arg", src: "img/flyers/i gotta feeling.png" },
-      { title: "SATURACION POP", client: "wesstyle.arg", src: "img/flyers/saturacionpop.png" },
-      { title: "Fvck Luv", client: "wesstyle.arg", src: "img/flyers/fuckluv.png" },
-      { title: "C.R.O.", client: "wesstyle.arg", src: "img/flyers/cro.png" },
-      { title: "Lanzamiento TAMO NUEVO", client: "Gondra", src: "img/flyers/tamonuevo-flyer.png" },
-      { title: "Plugtwrd Studio", client: "Yvng Golden", src: "img/flyers/plugtwrd.png" }
+      { title: " ", client: "Las Cabras del Sur", src: "img/flyers/jueves.webp" },
+      { title: " ", client: "JvnRoman", src: "img/flyers/jvn.webp" },
+      { title: " ", client: "Cabras del Sur", src: "img/flyers/neli.webp" },
+      { title: " ", client: "Viersadingos", src: "img/flyers/viersadingos.webp" },
+      { title: " ", client: "Gondra", src: "img/flyers/miataud.webp" },
+      { title: " ", client: "Gondra", src: "img/flyers/tevi.webp" },
+      { title: "", client: "FRN", src: "img/flyers/frn.webp" },
+      { title: "", client: "FRN & Kaui", src: "img/flyers/niceto.webp" },
+      { title: " ", client: "FRO!", src: "img/flyers/fro.webp" },
+      { title: " ", client: "Concepto", src: "img/flyers/fvck.webp" },
+      { title: " ", client: "Concepto", src: "img/flyers/cro" },
+      { title: " ", client: "Micery / Galy King", src: "img/flyers/santatrinidad.webp" }
     ]
   },
   { 
     id: "logos", 
-    label: "Logos / Identidad", 
+    label: "Logos", 
     number: " ", 
     icon: "logos", 
     blurb: "Isologos e identidades visuales para marcas y artistas.", 
     logos: [
-      { title: "JvnRoman", client: "Logo", src: "img/logos/jvn.jpg" },
-      { title: "BarderShop", client: "Logo", src: "img/logos/barder.jpg" },
-      { title: "NIRO", client: "Logo", src: "img/logos/niro.jpg" },
-      { title: "Cabras del Sur", client: "Logo", src: "img/logos/cds.jpg" },
-      { title: "Mate&Punto", client: "Logo", src: "img/logos/myp.jpg" },
-      { title: "D9", client: "Logo", src: "img/logos/d9.png" },
-      { title: "Xeon Flow", client: "Logo", src: "img/logos/logo (5).jpg" },
-      { title: "Viersadingos", client: "Logo", src: "img/logos/logo (1).jpg" },
-    ]
+      { title: "JvnRoman", client: "Logo", src: "img/logos/jvn.webp" },
+      { title: "BarderShop", client: "Logo", src: "img/logos/barder.webp" },
+      { title: "NIRO", client: "Logo", src: "img/logos/niro.webp" },
+      { title: "Cabras del Sur", client: "Logo", src: "img/logos/cds.webp" },
+      { title: "Mate&Punto", client: "Logo", src: "img/logos/myp.webp" },
+      { title: "D9", client: "Logo", src: "img/logos/d9.webp" },
+          ]
   },
   {
     id: "visualizers",
-    label: "Visualizers / YouTube",
+    label: "Visualizers / Video Lyrics",
     number: " ",
     icon: "video",
-    blurb: "Visualizers de audio y producciones audiovisuales.",
+    blurb: "Videos musicales para acompañar el tema",
     videos: [
-      { title: "Pasa un rato", client: "NIRO", embed: "https://www.youtube.com/embed/oTmju9RE8qs", src: "img/miniaturas/pasaunrato.png" },
-      { title: "Lejos de ti", client: "Vanek", embed: "https://www.youtube.com/embed/SwzMAK-N-IE", src: "img/miniaturas/lejosdeti.png" },
-      { title: "PUCCA", client: "NIRO", embed: "https://www.youtube.com/embed/09eJfGjJs0w", src: "img/miniaturas/pucca.jpg" },
-      { title: "Pasa un rato", client: "NIRO", embed: "https://www.youtube.com/embed/oTmju9RE8qs", src: "img/miniaturas/pasaunrato.png" },
-      { title: "Lejos de ti", client: "Vanek", embed: "https://www.youtube.com/embed/SwzMAK-N-IE", src: "img/miniaturas/lejosdeti.png" },
-      { title: "PUCCA", client: "NIRO", embed: "https://www.youtube.com/embed/09eJfGjJs0w", src: "img/miniaturas/pucca.jpg" },
-      { title: "Pasa un rato", client: "NIRO", embed: "https://www.youtube.com/embed/oTmju9RE8qs", src: "img/miniaturas/pasaunrato.png" },
-      { title: "Lejos de ti", client: "Vanek", embed: "https://www.youtube.com/embed/SwzMAK-N-IE", src: "img/miniaturas/lejosdeti.png" },
-      { title: "PUCCA", client: "NIRO", embed: "https://www.youtube.com/embed/09eJfGjJs0w", src: "img/miniaturas/pucca.jpg" }
-    ]
+      { title: "Pasa un rato", client: "NIRO", embed: "https://www.youtube.com/embed/oTmju9RE8qs", src: "img/miniaturas/pasaunrato.webp" },
+      { title: "Lejos de ti", client: "Vanek", embed: "https://www.youtube.com/embed/SwzMAK-N-IE", src: "img/miniaturas/lejosdeti.webp" },
+      { title: "PUCCA", client: "NIRO", embed: "https://www.youtube.com/embed/09eJfGjJs0w", src: "img/miniaturas/pucca.webp" },
+      { title: "En La Nota", client: "JvnRoman", embed: "https://www.youtube.com/embed/P6StH6L5nlc", src: "img/miniaturas/enlanota.webp" },
+    { title: "Wowo", client: "Arana", embed: "https://www.youtube.com/embed/DxTSuI7nhtM", src: "img/miniaturas/wowowo.webp" },
+    { title: "Desde donde vengo", client: "Arana", embed: "https://www.youtube.com/embed/ASmic3i1AZQ", src: "img/miniaturas/desdedondevengo.webp" }
+  
+  ]
   },
   { 
     id: "contacto", 
     label: "Contacto", 
     number: " ", 
     icon: "contacto", 
-    blurb: "Conectá con nosotros.", 
+    blurb: "Disponible para portadas, flyers, visualizers, identidad visual y dirección creativa.", 
     isContact: true 
   }
 ];
@@ -199,7 +183,6 @@ function renderSection(section) {
         <div class="contact-container">
           <div class="contact-card">
             <h3>Hablemos sobre tu proyecto</h3>
-            <p>Disponible para portadas, flyers, visualizers, identidad visual y dirección creativa.</p>
             <div class="contact-links">
               <a href="mailto:wesstyle.arg@gmail.com" class="contact-btn" target="_blank" rel="noopener">
                 <div class="contact-btn-left">
@@ -237,7 +220,7 @@ function renderSection(section) {
   if (isFlyer) dataList = section.flyers;
   if (isVisualizer) dataList = section.videos;
 
-  const items = dataList.map((p, i) => {
+const items = dataList.map((p, i) => {
     let mediaContent = '';
     let itemClass = '';
 
@@ -259,6 +242,7 @@ function renderSection(section) {
       mediaContent = `<img src="img/portadas/${p.file}" alt="${p.title}" class="portada-img" />`;
     }
 
+    // AQUÍ CAMBIAMOS: Solo mostramos p.title en la tarjeta de la galería
     return `
       <div class="floating-item ${itemClass}" data-index="${i}">
         ${mediaContent}
