@@ -7,11 +7,12 @@ const ICONS = {
   arrow: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>`,
   gmail: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
   instagram: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>`,
+  reel: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>`,
   whatsapp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`
 };
 
 const SECTIONS = [
- { 
+ {
     id: "portadas", 
     label: "Portadas / Album Cover Art", 
     number: " ", 
@@ -96,6 +97,19 @@ const SECTIONS = [
     { title: "Desde donde vengo", client: "Arana", embed: "https://www.youtube.com/embed/ASmic3i1AZQ", src: "img/miniaturas/desdedondevengo.webp" }
   
   ]
+  },
+  { 
+    id: "reels", 
+    label: "Reels / Videos", 
+    number: " ", 
+    icon: "reel", 
+    blurb: "Ediciones verticales y clips para redes sociales.", 
+    reels: [
+      { title: " ", client: "Viersadingos", file: "dulzura.mp4", thumb: "img/thumbs/dulzura.webp" },
+      { title: " ", client: "Viersadingos", file: "chofi.mp4", thumb: "img/thumbs/chofi.webp" },
+      { title: " ", client: "Viersadingos", file: "chofi2.mp4", thumb: "img/thumbs/chofi2.webp" },
+      { title: " ", client: "Cabras del Sur", file: "bsas.mp4", thumb: "img/thumbs/bsas.webp" },
+    ]
   },
   { 
     id: "contacto", 
@@ -214,35 +228,43 @@ function renderSection(section) {
   const isFlyer = section.id === "flyers";
   const isLogo = section.id === "logos";
   const isVisualizer = section.id === "visualizers";
+  const isReel = section.id === "reels";
   
   let dataList = section.portadas;
   if (isLogo) dataList = section.logos;
   if (isFlyer) dataList = section.flyers;
   if (isVisualizer) dataList = section.videos;
+  if (isReel) dataList = section.reels;
 
-const items = dataList.map((p, i) => {
+  const items = dataList.map((p, i) => {
     let mediaContent = '';
     let itemClass = '';
 
     if (isFlyer) {
       itemClass = 'flyer-item';
-      mediaContent = `<img src="${p.src}" alt="${p.title}" class="flyer-img" />`;
+      mediaContent = `<img src="${p.src}" alt="${p.title}" class="flyer-img" loading="lazy" />`;
     } else if (isLogo) {
       itemClass = '';
-      mediaContent = `<img src="${p.src}" alt="${p.title}" class="portada-img" />`;
+      mediaContent = `<img src="${p.src}" alt="${p.title}" class="portada-img" loading="lazy" />`;
     } else if (isVisualizer) {
       itemClass = 'visualizer-item';
       mediaContent = `
         <div class="video-thumb-wrap">
-          <img src="${p.src}" alt="${p.title}" class="portada-img" />
+          <img src="${p.src}" alt="${p.title}" class="portada-img" loading="lazy" />
           <div class="play-overlay">${ICONS.video}</div>
+        </div>`;
+    } else if (isReel) {
+      itemClass = 'reel-item';
+      mediaContent = `
+        <div class="reel-thumb-wrap">
+          <img src="${p.thumb}" alt="${p.title}" class="portada-img" loading="lazy" />
+          <div class="play-overlay">${ICONS.reel}</div>
         </div>`;
     } else {
       itemClass = '';
-      mediaContent = `<img src="img/portadas/${p.file}" alt="${p.title}" class="portada-img" />`;
+      mediaContent = `<img src="img/portadas/${p.file}" alt="${p.title}" class="portada-img" loading="lazy" />`;
     }
 
-    // AQUÍ CAMBIAMOS: Solo mostramos p.title en la tarjeta de la galería
     return `
       <div class="floating-item ${itemClass}" data-index="${i}">
         ${mediaContent}
@@ -403,8 +425,9 @@ function renderViewport() {
           const isFlyer = currentSection.id === "flyers";
           const isLogo = currentSection.id === "logos";
           const isVisualizer = currentSection.id === "visualizers";
+          const isReel = currentSection.id === "reels";
           
-          let data, mediaSrc, embedUrl = null;
+          let data, mediaSrc = null, embedUrl = null, videoFile = null;
           if (isFlyer) {
             data = currentSection.flyers[i];
             mediaSrc = data.src;
@@ -415,19 +438,22 @@ function renderViewport() {
             data = currentSection.videos[i];
             mediaSrc = data.src;
             embedUrl = data.embed;
+          } else if (isReel) {
+            data = currentSection.reels[i];
+            videoFile = `img/reels/${data.file}`;
           } else {
             data = currentSection.portadas[i];
             mediaSrc = `img/portadas/${data.file}`;
           }
           
-          openModal(data.title, data.client, mediaSrc, isFlyer, embedUrl);
+          openModal(data.title, data.client, mediaSrc, isFlyer, embedUrl, videoFile);
         });
       });
     }
   }
 }
 
-function openModal(title, category, mediaSrc = null, isFlyer = false, embedUrl = null) {
+function openModal(title, category, mediaSrc = null, isFlyer = false, embedUrl = null, videoFile = null) {
   modalTitle.textContent = title;
   modalCat.textContent = category;
   
@@ -440,6 +466,8 @@ function openModal(title, category, mediaSrc = null, isFlyer = false, embedUrl =
   const modalPlaceholder = modalCard.querySelector(".modal-placeholder");
   if (embedUrl) {
     modalPlaceholder.innerHTML = `<iframe src="${embedUrl}?autoplay=1" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="modal-video-iframe"></iframe>`;
+  } else if (videoFile) {
+    modalPlaceholder.innerHTML = `<video src="${videoFile}" controls autoplay playsinline class="modal-reel-video"></video>`;
   } else if (mediaSrc) {
     modalPlaceholder.innerHTML = `<img src="${mediaSrc}" alt="${title}" />`;
   } else {
@@ -511,8 +539,6 @@ window.addEventListener(
   },
   { passive: true }
 );
-
-
 
 window.addEventListener("resize", renderRail);
 
